@@ -2,7 +2,6 @@ package com.example.ui
 
 import com.example.model.Movie
 import io.ktor.html.*
-import kotlinx.html.FlowContent
 import kotlinx.html.*
 
 class MoviesTemplate(private val movies: List<Movie>) : Template<FlowContent> {
@@ -29,7 +28,7 @@ class MoviesTemplate(private val movies: List<Movie>) : Template<FlowContent> {
                                     encType = FormEncType.multipartFormData,
                                     action = "/bookmark"
                                 ) {
-                                    if(it.isBookmarked) {
+                                    if (it.isBookmarked) {
                                         button(classes = "btn btn-success", type = ButtonType.submit) {
                                             +"Done"
                                         }
@@ -47,8 +46,6 @@ class MoviesTemplate(private val movies: List<Movie>) : Template<FlowContent> {
                     }
                 }
             }
-
         }
     }
-
 }
