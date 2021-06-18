@@ -1,5 +1,6 @@
 package com.example
 
+import com.example.data.DataManager
 import com.example.ui.MoviesTemplate
 import com.example.ui.TopBarTemplate
 import io.ktor.application.*
@@ -9,7 +10,6 @@ import io.ktor.routing.*
 import kotlinx.html.*
 
 fun Application.configureRouting() {
-
     routing {
         authenticate("auth-basic") {
             get("/") {
@@ -18,16 +18,14 @@ fun Application.configureRouting() {
                         configureBootstrapInTheHeader()
                         title { +"Awesome Movies" }
                     }
-
                     body {
                         insert(TopBarTemplate()) {}
-                        insert(MoviesTemplate(GlobalObject.movies)) {}
+                        insert(MoviesTemplate(DataManager.movies)) {}
 
                         configureBootstrapInTheBody()
                     }
                 }
             }
-
             bookmarkRoute()
         }
     }

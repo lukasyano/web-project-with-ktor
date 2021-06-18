@@ -1,5 +1,6 @@
 package com.example
 
+import com.example.data.DataManager
 import io.ktor.application.*
 import io.ktor.html.*
 import io.ktor.http.content.*
@@ -22,9 +23,9 @@ fun Route.bookmarkRoute() {
             }
             part.dispose
         }
-        GlobalObject.movies.forEach {
+        DataManager.movies.forEach {
             if (it.id == movieIdPassed) {
-                GlobalObject.updateMovie(movieIdPassed)
+                DataManager.updateMovie(movieIdPassed)
             }
         }
         call.respondHtml {
