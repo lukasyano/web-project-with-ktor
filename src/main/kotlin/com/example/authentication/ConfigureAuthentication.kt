@@ -11,7 +11,6 @@ fun Application.configureAuthentication() {
         basic("auth-basic") {
             validate { credentials ->
                 if (isUserFound(credentials)) {
-                    DataManager.userName = credentials.name
                     UserIdPrincipal(credentials.name)
                 } else {
                     null

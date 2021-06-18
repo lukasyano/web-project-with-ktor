@@ -5,8 +5,6 @@ import com.example.model.User
 
 object DataManager {
 
-    var userName = ""
-
     var movies = listOf(
         Movie("1", "Awake", 2021, false),
         Movie("2", "Doors", 2020, false),

@@ -1,5 +1,7 @@
 package com.example
 
+import com.example.bootstrap.configureBootstrapInTheBody
+import com.example.bootstrap.configureBootstrapInTheHeader
 import com.example.data.DataManager
 import com.example.ui.MoviesTemplate
 import com.example.ui.TopBarTemplate

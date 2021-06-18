@@ -1,4 +1,4 @@
-package com.example
+package com.example.bootstrap
 
 import kotlinx.html.BODY
 import kotlinx.html.HEAD

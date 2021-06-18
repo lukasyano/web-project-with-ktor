@@ -1,5 +1,7 @@
 package com.example
 
+import com.example.bootstrap.configureBootstrapInTheBody
+import com.example.bootstrap.configureBootstrapInTheHeader
 import com.example.data.DataManager
 import io.ktor.application.*
 import io.ktor.html.*
