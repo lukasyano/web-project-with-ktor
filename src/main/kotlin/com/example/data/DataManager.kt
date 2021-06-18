@@ -22,8 +22,8 @@ object DataManager {
 
     val users = listOf(
         User(1,"lukas","lukas123"),
-        User(1,"mykolas","mykolas123"),
-        User(1,"test","test123"),
+        User(2,"mykolas","mykolas123"),
+        User(3,"test","test123"),
     )
 
     fun updateMovie(movieId : String) {

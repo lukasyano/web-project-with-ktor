@@ -6,11 +6,11 @@ import io.ktor.auth.*
 
 //https://ktor.io/docs/authentication
 fun Application.configureAuthentication() {
+
     install(Authentication) {
         basic("auth-basic") {
             validate { credentials ->
-                if (credentials.name == "lukas" && credentials.password == "lukas123") {
-
+                if (isUserFound(credentials)) {
                     DataManager.userName = credentials.name
                     UserIdPrincipal(credentials.name)
                 } else {
@@ -19,4 +19,13 @@ fun Application.configureAuthentication() {
             }
         }
     }
+}
+
+fun isUserFound(userPasswordCredential: UserPasswordCredential): Boolean {
+    DataManager.users.forEach {
+        if (userPasswordCredential.name == it.name && userPasswordCredential.password == it.password){
+            return true
+        }
+    }
+    return false
 }
